@@ -6,4 +6,4 @@ Aerodynamic forces are computed from tabulated Cl/Cd data via 2-D interpolation,
 
 This tool enables running thousands of randomized trajectories (targets, winds, etc.) to evaluate miss distance statistics or generate ML-ready datasets. Users can replace the placeholder aerodynamic tables with real aero data from CFD or experiments.
 
-This version is an optimized rewrite of `6DOF_Light_ML_Training.py`, emphasizing speed, reproducibility, and scalable batch simulation using a hand-coded RK4 integrator.
+`6DOF_Light_ML_Training.py` is a new version emphasizing speed, reproducibility, and scalable batch simulation using a hand-coded RK4 integrator, ran 100,000 times.
