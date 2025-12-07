@@ -1,6 +1,6 @@
 # Trajectory-Monte-Carlo
 
-A compact, reproducible quasi-6-DoF projectile simulation framework built for large-scale Monte Carlo analysis and machine-learning dataset generation. The new model couples simplified rigid-body dynamics with proportional-navigation steering and 
+A compact, reproducible quasi-6-DoF projectile simulation framework built for large-scale Monte Carlo analysis and machine-learning dataset generation. The model couples simplified rigid-body dynamics with proportional-navigation steering and 
 pitch-trim control.
 
 Aerodynamic forces are computed from tabulated Cl/Cd values using 2-D interpolation, and pitching moments include static Cm(α), control-induced moment, and rate damping. 
