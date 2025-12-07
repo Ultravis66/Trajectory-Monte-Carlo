@@ -40,7 +40,9 @@ Use `Plotting.py` to visualize the dataset and generate performance plots after 
   - Trajectory visualizations  
 
 ---
-
+## Author
+if you use this work, please cite:
+```
 @misc{trajectoryMC2025,
 author    = {Stolk, Mitchell},
 title     = {Trajectory-Monte-Carlo: Quasi-6DoF Projectile Simulator and ML Dataset Generator},
@@ -48,4 +50,3 @@ year      = {2025},
 publisher = {GitHub},
 url       = {https://github.com/ultravis66/Trajectory-Monte-Carlo}
 }
-
