@@ -8,4 +8,4 @@ This tool enables running thousands of randomized trajectories (targets, winds, 
 
 `6DOF_Light_ML_Training.py` is a new version emphasizing speed, reproducibility, and scalable batch simulation using a hand-coded RK4 integrator, ran (100,000 times to ttrain a neural network).
 
-use Plotting.py to plot the data after running the simulation.
+use 'Plotting.py' to plot the data after running the simulation.
