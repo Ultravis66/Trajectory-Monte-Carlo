@@ -41,12 +41,11 @@ Use `Plotting.py` to visualize the dataset and generate performance plots after 
 
 ---
 
-## Usage Instructions
+@misc{trajectoryMC2025,
+author    = {Stolk, Mitchell},
+title     = {Trajectory-Monte-Carlo: Quasi-6DoF Projectile Simulator and ML Dataset Generator},
+year      = {2025},
+publisher = {GitHub},
+url       = {https://github.com/ultravis66/Trajectory-Monte-Carlo}
+}
 
-### **1. Run the simulation**
-This generates:
-- `trajectory_ml_dataset.csv` (summary for ML)
-- `trajectories/traj_XXXXX.npz` (full trajectory data)
-
-```bash
-python 6DOF_Light_ML_Training.py
