@@ -1,6 +1,9 @@
 # Trajectory-Monte-Carlo
 
-A small, reproducible simulation that couples guidance (PN + pitch trim) with rigid-body dynamics. Aerodynamics are from tabulated Cl/Cd with interpolation; pitching moments use 
-Cm(α) + control + rate damping. Includes event-based ground impact, Monte Carlo, targeting, and runtime reporting.
+A compact, reproducible quasi-6-DoF projectile simulation framework built for large-scale Monte Carlo analysis and machine-learning dataset generation. The model couples simplified rigid-body dynamics with proportional-navigation-style steering and pitch-trim control.
 
-this is designed to run multiple cases and let the user know if you can hit the target within a given radius and within 2 meters. Just replace dummy aero tables with real tables (usually produced from CFD analysis).
+Aerodynamic forces are computed from tabulated Cl/Cd data via 2-D interpolation, and pitching moments include static Cm(α), control-induced moment, and rate damping. Quaternion attitude propagation, RK4 numerical integration, and event-based ground-impact termination ensure stable trajectory evolution.
+
+This tool enables running thousands of randomized trajectories (targets, winds, etc.) to evaluate miss distance statistics or generate ML-ready datasets. Users can replace the placeholder aerodynamic tables with real aero data from CFD or experiments.
+
+This version is an optimized rewrite of `6DOF_Light_ML_Training.py`, emphasizing speed, reproducibility, and scalable batch simulation using a hand-coded RK4 integrator.
