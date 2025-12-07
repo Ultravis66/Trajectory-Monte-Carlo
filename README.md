@@ -11,3 +11,42 @@ This tool enables running thousands (or tens of thousands) of randomized traject
 The main simulation script (`6DOF_Light_ML_Training.py`) is an updated version emphasizing speed, reproducibility, and scalable batch execution using a hand-coded RK4 integrator. It can be extended to run 100,000+ trajectories for training neural-network surrogate models.
 
 Use `Plotting.py` to visualize the dataset and generate performance plots after running the simulation. Aerodynamic inputs in this repository are placeholder values; in practice these are typically replaced with CFD- or experimentally-derived tables.
+
+## Features
+
+- **Quasi-6-DoF rigid-body dynamics**
+  - 13-state model (position, velocity, quaternion attitude, angular rates)
+- **Guidance & control**
+  - Proportional-navigation-style lateral steering  
+  - Pitch-trim logic for altitude control  
+- **Aerodynamics**
+  - Tabulated Cl/Cd lookups with 2-D interpolation  
+  - Cm(α) curve with control + damping contributions  
+  - Optional CP→CG moment arm
+- **Numerical integration**
+  - Hand-written fixed-step RK4  
+  - Stable quaternion normalization  
+- **Monte Carlo engine**
+  - Randomized target locations & wind vectors  
+  - Batched execution for 1,000–100,000+ trajectories  
+  - Progress reporting, statistics, timing  
+- **Data export**
+  - Summary CSV for machine learning  
+  - Individual trajectory `.npz` files (states + time histories)
+- **Plotting tools**
+  - Miss-distance histograms  
+  - CEP statistics  
+  - Target hit/miss maps  
+  - Trajectory visualizations  
+
+---
+
+## Usage Instructions
+
+### **1. Run the simulation**
+This generates:
+- `trajectory_ml_dataset.csv` (summary for ML)
+- `trajectories/traj_XXXXX.npz` (full trajectory data)
+
+```bash
+python 6DOF_Light_ML_Training.py
