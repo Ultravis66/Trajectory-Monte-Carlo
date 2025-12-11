@@ -75,18 +75,18 @@ AoA = np.array([0, 4, 6, 8, 12, 16], dtype=float)
 canP = np.array([0, 4, 6, 8, 12, 16], dtype=float)
 
 CdP = np.array([[0.35,0.40,0.50,0.65,1.10,1.80],
-                [0.35,0.45,0.60,0.80,1.30,2.00],
-                [0.45,0.55,0.65,0.90,1.40,2.10],
-                [0.50,0.70,0.85,1.00,1.60,2.30],
+                [0.40,0.50,0.60,0.80,1.30,2.00],
+                [0.45,0.55,0.65,0.85,1.40,2.10],
+                [0.50,0.65,0.80,1.00,1.60,2.30],
                 [0.60,0.75,0.90,1.10,1.70,2.35],
                 [0.70,0.85,1.00,1.20,1.80,2.45]], dtype=float)
 
-ClP = np.array([[0.00,1.00,1.75,2.50,4.00,5.70],
-                [0.05,1.15,1.80,2.60,4.10,5.60],
-                [0.20,1.20,1.85,2.70,4.20,5.50],
-                [0.40,1.25,1.90,2.80,4.30,5.40],
-                [0.50,1.20,1.85,2.70,4.20,5.30],
-                [0.60,1.15,1.80,2.60,4.10,5.20]], dtype=float)
+ClP = np.array([[0.00,1.10,1.75,2.50,3.90,5.50],
+                [0.05,1.20,1.90,2.60,4.00,5.40],
+                [0.20,1.25,1.95,2.70,4.10,5.30],
+                [0.40,1.35,2.00,2.80,4.20,5.20],
+                [0.50,1.40,2.05,2.70,4.10,5.10],
+                [0.60,1.45,2.10,2.60,4.00,5.00]], dtype=float)
 
 _cl_interp = RegularGridInterpolator((AoA, canP), ClP, bounds_error=False, fill_value=None)
 _cd_interp = RegularGridInterpolator((AoA, canP), CdP, bounds_error=False, fill_value=None)
@@ -102,7 +102,7 @@ def lookup_cl_cd(alpha_deg, pitch_deg):
     return _cl_interp(pt).item(), _cd_interp(pt).item()
 
 alpha_table_full = np.array([0,4,6,8,12,16,25,45,60,90,180], dtype=float)
-Cm_alpha_values = np.array([0,-.1,-.2,-.3,-1,-2,-4,-8,-10,-8,-6], dtype=float)
+Cm_alpha_values = np.array([0,-0.10,-0.15,-0.30,-1,-2,-4,-8,-10,-8,-6], dtype=float)
 
 def cm_alpha_interp(alpha_deg):
     return float(np.interp(abs(alpha_deg), alpha_table_full, Cm_alpha_values))
@@ -518,3 +518,4 @@ if __name__ == '__main__':
     mp.freeze_support()
 
     main()
+
