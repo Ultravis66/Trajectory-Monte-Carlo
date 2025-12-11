@@ -10,7 +10,7 @@ This tool enables running thousands (or tens of thousands) of randomized traject
 
 The main simulation script (`6DOF_Light_ML_Training.py`) is an updated version emphasizing speed, reproducibility, and scalable batch execution using a hand-coded RK4 integrator. It can be extended to run 100,000+ trajectories for training neural-network surrogate models.
 
-#EDIT: I have been playing around with the Aero Tables; current design space trim AoA is ~13° from the given Cm,alpha table. I updated the Aero tables based on what I could find on the internet of how airframes behave. 13° is a little on the high side, but was done for demonstration purposes to see if the Neural Net I build would follow the trajectory path. 
+#EDIT: I have been playing around with the Aero Tables; current design space trim AoA is ~13° from the given Cm,alpha table. 13° is a little on the high side, but was done for demonstration purposes to see if the Neural Net I build would follow the trajectory path. 
 
 Companion repo found here:  https://github.com/Ultravis66/Guided-Trajectory-Neural-Net
 
